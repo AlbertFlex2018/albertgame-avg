@@ -1,5 +1,6 @@
 package albertgame.avg.stage;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -10,8 +11,8 @@ public class Story {
     private final List<IStoryAction> actionList;
     private final String name;
 
-    public Story(List<IStoryAction> actionList, String name) {
-        this.actionList = actionList;
+    public Story(String name) {
+        this.actionList = new LinkedList<>();
         this.name = name;
     }
 
