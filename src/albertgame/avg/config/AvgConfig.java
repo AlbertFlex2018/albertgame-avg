@@ -1,6 +1,8 @@
 package albertgame.avg.config;
 
-import albertgame.avg.stage.StoryStage;
+import afengine.core.window.ITexture;
+import albertgame.avg.Player;
+import albertgame.avg.StoryStage;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,20 +11,39 @@ import java.util.Map;
  * @author Albert Flex
  */
 public class AvgConfig {
+    private static AvgConfig config=null;
+    public static AvgConfig getInstance(){
+        if(config==null)
+            config=new AvgConfig();
+        return config;
+    }
+    
+    //story
     private final Map<String,StoryStage> stageMap;
     private String stageIndex;
     private String storyIndex;
     private int    actionIndex;
+    
+    //back
+    private ITexture backAcg;    
+    
+    //word
+    private String word;
+    
+    //player display
+    private Player leftPlayer,centerPlayer,rightPlayer;
+    private String leftPlayerState,centerPlayerState,rightPlayerState;
+    
+    //backmidi id
+    private long midiId;
+    private final Map<String,String> attributes;
 
-    public AvgConfig(Map<String, StoryStage> stageMap, String stageIndex, String storyIndex, int actionIndex) {
-        this.stageMap = stageMap;
-        this.stageIndex = stageIndex;
-        this.storyIndex = storyIndex;
-        this.actionIndex = actionIndex;
-    }
-
-    public AvgConfig(String stageIndex, String storyIndex, int actionIndex) {
-        this(new HashMap<>(),stageIndex,storyIndex,actionIndex);
+    private AvgConfig(){
+        stageMap=new HashMap<>();
+        stageIndex="";
+        storyIndex="";
+        actionIndex=0;
+        attributes=new HashMap<>();
     }
     
     public String getStageIndex() {
@@ -52,4 +73,89 @@ public class AvgConfig {
     public Map<String, StoryStage> getStageMap() {
         return stageMap;
     }    
+
+    public static AvgConfig getConfig() {
+        return config;
+    }
+
+    public static void setConfig(AvgConfig config) {
+        AvgConfig.config = config;
+    }
+
+    public ITexture getBackAcg() {
+        return backAcg;
+    }
+
+    public void setBackAcg(ITexture backAcg) {
+        this.backAcg = backAcg;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public Player getLeftPlayer() {
+        return leftPlayer;
+    }
+
+    public void setLeftPlayer(Player leftPlayer) {
+        this.leftPlayer = leftPlayer;
+    }
+
+    public Player getCenterPlayer() {
+        return centerPlayer;
+    }
+
+    public void setCenterPlayer(Player centerPlayer) {
+        this.centerPlayer = centerPlayer;
+    }
+
+    public Player getRightPlayer() {
+        return rightPlayer;
+    }
+
+    public void setRightPlayer(Player rightPlayer) {
+        this.rightPlayer = rightPlayer;
+    }
+
+    public String getLeftPlayerState() {
+        return leftPlayerState;
+    }
+
+    public void setLeftPlayerState(String leftPlayerState) {
+        this.leftPlayerState = leftPlayerState;
+    }
+
+    public String getCenterPlayerState() {
+        return centerPlayerState;
+    }
+
+    public void setCenterPlayerState(String centerPlayerState) {
+        this.centerPlayerState = centerPlayerState;
+    }
+
+    public String getRightPlayerState() {
+        return rightPlayerState;
+    }
+
+    public void setRightPlayerState(String rightPlayerState) {
+        this.rightPlayerState = rightPlayerState;
+    }
+
+    public long getMidiId() {
+        return midiId;
+    }
+
+    public void setMidiId(long midiId) {
+        this.midiId = midiId;
+    }
+
+    public Map<String, String> getAttributes() {
+        return attributes;
+    }
+    
 }

@@ -1,4 +1,4 @@
-package albertgame.avg.stage;
+package albertgame.avg;
 
 import org.dom4j.Element;
 

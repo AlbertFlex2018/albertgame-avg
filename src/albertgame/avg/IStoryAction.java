@@ -1,9 +1,9 @@
-package albertgame.avg.stage;
+package albertgame.avg;
 
 /**
  *
  * @author Albert Flex
  */
 public interface IStoryAction {
-    void action(String actionname);
+    void action(String ... args);
 }

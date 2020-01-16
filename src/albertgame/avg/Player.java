@@ -1,4 +1,4 @@
-package albertgame.avg.stage;
+package albertgame.avg;
 
 import afengine.core.window.ITexture;
 import java.util.HashMap;
