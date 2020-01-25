@@ -72,14 +72,6 @@ public class AvgConfig {
         return stageMap;
     }    
 
-    public static AvgConfig getConfig() {
-        return config;
-    }
-
-    public static void setConfig(AvgConfig config) {
-        AvgConfig.config = config;
-    }
-
     public ITexture getBackAcg() {
         return backAcg;
     }

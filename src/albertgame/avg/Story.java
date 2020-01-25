@@ -8,7 +8,7 @@ import java.util.List;
  * @author Albert Flex
  */
 public class Story {
-    private final List<IStoryAction> actionList;
+    private final List<String> actionList;
     private final String name;
 
     public Story(String name) {
@@ -20,10 +20,10 @@ public class Story {
         return name;
     }
         
-    public List<IStoryAction> getActionList() {
+    public List<String> getActionList() {
         return actionList;
     }
-    public IStoryAction getActionByIndex(int index){
+    public String getActionByIndex(int index){
         return actionList.get(index);
     }
 }

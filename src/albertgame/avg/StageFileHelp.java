@@ -18,7 +18,11 @@ public class StageFileHelp {
             </players>
             <stories>
                 <storyname>
-                    <actiontype />
+                    <actiontype>
+                        <arg value=""/>
+                        <arg value=""/>
+                        ...
+                    </actiontype>
                     <actiontype />
                     <actiontype />
                     ...
@@ -32,10 +36,10 @@ public class StageFileHelp {
         return null;
     }
     /*
-        actiontype#arg1#arg2#arg3;;
-        actiontype#arg1#arg2#arg3;;
-        actiontype#arg1#arg2#arg3;;
-        word#show#We are Friend? it's right?;;
+        actiontype#arg1#arg2#arg3;
+        actiontype#arg1#arg2#arg3;
+        actiontype#arg1#arg2#arg3;
+        word#show#We are Friend? it's right?;
     */
     public static Story loadStoryFromTXT(String text){
         return null;
