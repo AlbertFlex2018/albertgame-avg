@@ -1,10 +1,5 @@
 package albertgame.avg.action;
 
-import afengine.core.AppState;
-import afengine.core.WindowApp;
-import afengine.core.util.Debug;
-import afengine.core.window.IGraphicsTech;
-import afengine.core.window.ITexture;
 import afengine.part.sound.SoundCenter;
 import albertgame.avg.AvgConfig;
 import albertgame.avg.IStoryAction;
@@ -22,7 +17,6 @@ public class BgmAction implements IStoryAction{
         bgm prepare name path
         bgm play name
     */
-
     @Override
     public void action(String... args) {
         if(args[0].equals("bgm"))return;
