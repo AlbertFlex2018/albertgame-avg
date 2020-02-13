@@ -33,8 +33,7 @@ public class BackAction implements IStoryAction{
             if(args[1].equals("show")){
                 show(args);
             }
-        }
-        
+        }        
     }   
     //back prepare name path
     private void prepare(String ... args){
@@ -58,5 +57,10 @@ public class BackAction implements IStoryAction{
         }
         AvgConfig config=AvgConfig.getInstance();
         config.setBackAcg(texture);
+    }
+
+    @Override
+    public String getType() {
+        return "back";
     }
 }

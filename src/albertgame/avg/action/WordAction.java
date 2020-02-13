@@ -22,4 +22,8 @@ public class WordAction implements IStoryAction{
         AvgConfig config=AvgConfig.getInstance();
         config.setWord(args[1]);
     }    
+    @Override
+    public String getType() {
+        return "word";
+    }    
 }

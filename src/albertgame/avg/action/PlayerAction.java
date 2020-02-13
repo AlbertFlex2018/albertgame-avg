@@ -96,4 +96,8 @@ public class PlayerAction implements IStoryAction{
                 break;
         }        
     }
+    @Override
+    public String getType() {
+        return "player";
+    }    
 }

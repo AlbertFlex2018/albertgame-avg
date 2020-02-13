@@ -13,6 +13,7 @@ import java.util.Map;
 public class BgmAction implements IStoryAction{
     
     private static final Map<String,Long> midiMap=new HashMap<>();
+    private static final Map<String,String> midiPathMap=new HashMap<>();
     /*
         bgm prepare name path
         bgm play name
@@ -37,13 +38,19 @@ public class BgmAction implements IStoryAction{
         String path=args[3];
         long id=SoundCenter.getInstance().addMidi(path);
         midiMap.put(name, id);
+        midiPathMap.put(name,path);
     }
     //bgm play name
     private void show(String ... args){
         String name=args[2];
         Long id=midiMap.get(name);
         AvgConfig config=AvgConfig.getInstance();
-        config.setMidiId(0);
+        config.setMidipath(midiPathMap.get(name));
         SoundCenter.getInstance().playMidi(id, true);
     }    
+    @Override
+    public String getType() {
+        return "bgm";
+    }
+    
 }

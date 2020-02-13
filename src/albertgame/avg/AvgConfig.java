@@ -21,6 +21,7 @@ public class AvgConfig {
     private String stageIndex;
     private String storyIndex;
     private int    actionIndex;
+    private boolean wordreadok;
     
     //back
     private ITexture backAcg;    
@@ -32,8 +33,8 @@ public class AvgConfig {
     private Player leftPlayer,centerPlayer,rightPlayer;
     private String leftPlayerState,centerPlayerState,rightPlayerState;
     
-    //backmidi id
-    private long midiId;
+    //backmidi path
+    private String midipath;
     private final Map<String,String> attributes;
 
     private AvgConfig(){
@@ -136,16 +137,23 @@ public class AvgConfig {
         this.rightPlayerState = rightPlayerState;
     }
 
-    public long getMidiId() {
-        return midiId;
+    public String getMidipath() {
+        return midipath;
     }
 
-    public void setMidiId(long midiId) {
-        this.midiId = midiId;
-    }
-
+    public void setMidipath(String midipath) {
+        this.midipath = midipath;
+    }    
+    
     public Map<String, String> getAttributes() {
         return attributes;
+    }    
+
+    public boolean isWordreadok() {
+        return wordreadok;
     }
-    
+
+    public void setWordreadok(boolean wordreadok) {
+        this.wordreadok = wordreadok;
+    }    
 }

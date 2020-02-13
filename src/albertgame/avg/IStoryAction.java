@@ -6,4 +6,5 @@ package albertgame.avg;
  */
 public interface IStoryAction {
     void action(String ... args);
+    String getType();
 }
