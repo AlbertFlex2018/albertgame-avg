@@ -1,8 +1,13 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package albertgame.avg.action;
 
 import afengine.core.util.Debug;
-import albertgame.avg.AvgConfig;
-import albertgame.avg.IStoryAction;
+import albertgame.avg.AvgData;
+import albertgame.avg.story.IStoryAction;
 
 /**
  *
@@ -10,20 +15,12 @@ import albertgame.avg.IStoryAction;
  */
 public class WordAction implements IStoryAction{
 
-    /*
-      word text1
-    */
     @Override
-    public void action(String... args){
+    public void action(AvgData data, String... args) {
         if(args.length!=2||!args[0].equals("word")){
-            Debug.log("action failed:word#text");
+            Debug.log("action failed:word text");
             return;
         }
-        AvgConfig config=AvgConfig.getInstance();
-        config.setWord(args[1]);
-    }    
-    @Override
-    public String getType() {
-        return "word";
+        data.getDataMap().replace("word",args[1]);
     }    
 }

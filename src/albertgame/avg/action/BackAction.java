@@ -5,24 +5,20 @@ import afengine.core.WindowApp;
 import afengine.core.util.Debug;
 import afengine.core.window.IGraphicsTech;
 import afengine.core.window.ITexture;
-import albertgame.avg.AvgConfig;
-import albertgame.avg.IStoryAction;
+import albertgame.avg.AvgData;
+import albertgame.avg.story.IStoryAction;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author Admin
- */
 public class BackAction implements IStoryAction{
+    private final Map<String,ITexture> TextureMap;
 
-    /*
-        back prepare name path        
-        back show name        
-    */
-    private static final Map<String,ITexture> TextureMap=new HashMap<>();
+    public BackAction() {
+        TextureMap=new HashMap<>();
+    }
+    
     @Override
-    public void action(String... args) {
+    public void action(AvgData data, String... args) {
         if(args[0].equals("back"))return;
         
         if(args.length==4){
@@ -31,10 +27,10 @@ public class BackAction implements IStoryAction{
             }
         }else if(args.length==3){
             if(args[1].equals("show")){
-                show(args);
+                show(data,args);
             }
-        }        
-    }   
+        }else Debug.log("not a back action!");                
+    } 
     //back prepare name path
     private void prepare(String ... args){
         String name=args[2];
@@ -47,20 +43,15 @@ public class BackAction implements IStoryAction{
         }
         TextureMap.put(name, texture);
     }
+    
     //back show name
-    private void show(String ... args){
+    private void show(AvgData data,String ... args){
         String name=args[2];
         ITexture texture=TextureMap.get(name);
         if(texture==null){
             Debug.log("texture show failed,not prepared..");
             return;
         }
-        AvgConfig config=AvgConfig.getInstance();
-        config.setBackAcg(texture);
-    }
-
-    @Override
-    public String getType() {
-        return "back";
-    }
+        data.setBack(texture);
+    }    
 }
