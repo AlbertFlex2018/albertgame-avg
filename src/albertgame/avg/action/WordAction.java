@@ -9,10 +9,6 @@ import afengine.core.util.Debug;
 import albertgame.avg.AvgData;
 import albertgame.avg.story.IStoryAction;
 
-/**
- *
- * @author Admin
- */
 public class WordAction implements IStoryAction{
 
     @Override
@@ -21,6 +17,6 @@ public class WordAction implements IStoryAction{
             Debug.log("action failed:word text");
             return;
         }
-        data.getDataMap().replace("word",args[1]);
-    }    
+        data.getDataMap().replace("word",args[1]);        
+    }
 }

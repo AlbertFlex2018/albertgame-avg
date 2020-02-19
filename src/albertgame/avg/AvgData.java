@@ -24,8 +24,8 @@ public class AvgData {
     //stage-name,story-name,action-index    
     //display-left,display-center,display-right
     //left-name,left-state,center-name,center-state,right-name,right-state
-    //word
-    //midi-path
+    //word,word-line1,word-line2,word-line3,word-line4,word-new
+    //midi-path    
     private final Map<String,String> dataMap;
     
     //stage - story - action
@@ -55,6 +55,12 @@ public class AvgData {
         dataMap.put("right-state","");
 
         dataMap.put("word","");
+        dataMap.put("word-line1","");
+        dataMap.put("word-line2","");
+        dataMap.put("word-line3","");
+        dataMap.put("word-line4","");        
+        dataMap.put("word-new","false");
+
         dataMap.put("midipath","");
 
         stageMap=new HashMap<>();
